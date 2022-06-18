@@ -1,0 +1,16 @@
+{
+  "name": "multicall",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:perpdex/multicall.git",
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@nomiclabs/hardhat-ethers": "^2.0.6",
+    "dotenv": "^16.0.1",
+    "hardhat": "^2.9.9",
+    "hardhat-deploy": "^0.11.10",
+    "ts-node": "^10.8.1",
+    "typescript": "^4.7.4"
+  }
+}
