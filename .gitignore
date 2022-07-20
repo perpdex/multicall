@@ -16,3 +16,5 @@ contracts/hardhat-dependency-compiler/*
 
 deployments/hardhat
 deployments/localhost
+artifacts-zk
+cache-zk
