@@ -6,10 +6,11 @@
   "author": "",
   "license": "MIT",
   "devDependencies": {
+    "@matterlabs/hardhat-zksync-solc": "^0.3.6",
     "@nomiclabs/hardhat-ethers": "^2.0.6",
     "dotenv": "^16.0.1",
-    "hardhat": "^2.9.9",
-    "hardhat-deploy": "^0.11.10",
+    "hardhat": "^2.10.1",
+    "hardhat-deploy": "^0.11.11",
     "ts-node": "^10.8.1",
     "typescript": "^4.7.4"
   }

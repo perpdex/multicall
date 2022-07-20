@@ -1,6 +1,7 @@
 import "@nomiclabs/hardhat-ethers"
 import { config as dotenvConfig } from "dotenv"
 import "hardhat-deploy"
+import "@matterlabs/hardhat-zksync-solc"
 import { HardhatUserConfig } from "hardhat/config"
 import { resolve } from "path"
 
@@ -11,9 +12,21 @@ const config: HardhatUserConfig = {
         sources: "./src"
     },
     solidity: {
-        version: "0.8.2",
+        version: "0.8.12",
         settings: {
             optimizer: { enabled: true, runs: 200 },
+        },
+    },
+    zksolc: {
+        version: "0.1.0",
+        compilerSource: "docker",
+        settings: {
+            optimizer: {
+                enabled: true,
+            },
+            experimental: {
+                dockerImage: "matterlabs/zksolc",
+            },
         },
     },
     namedAccounts: {
@@ -58,6 +71,19 @@ if (config.networks && process.env.TESTNET_PRIVATE_KEY) {
                 apiUrl: "https://blockscout.com/shibuya",
             },
         },
+    }
+
+    config.networks.zksync2_testnet = {
+        url: "https://zksync2-testnet.zksync.dev",
+        chainId: 280,
+        accounts: [process.env.TESTNET_PRIVATE_KEY],
+        gasMultiplier: 2,
+        verify: {
+            etherscan: {
+                apiUrl: "https://zksync2-testnet.zkscan.io/",
+            },
+        },
+        zksync: true,
     }
 }
 
