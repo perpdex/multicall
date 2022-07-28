@@ -85,6 +85,11 @@ if (config.networks && process.env.TESTNET_PRIVATE_KEY) {
         },
         zksync: true,
     }
+
+    config.networks.arbitrum_rinkeby = {
+        url: "https://rinkeby.arbitrum.io/rpc",
+        accounts: [process.env.TESTNET_PRIVATE_KEY],
+    }
 }
 
 export default config
